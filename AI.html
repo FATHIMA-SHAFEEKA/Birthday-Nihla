@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Happy Birthday, Nihla 🎉</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg1:#0f172a; /* deep navy */
+      --bg2:#073b4c; /* teal */
+      --accent:#00ffd5;
+      --card:#0b1220;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:'Poppins',system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial;color:#e6f7ff;background:radial-gradient(circle at 10% 10%, rgba(0,255,213,0.06), transparent 10%), linear-gradient(135deg,var(--bg1),var(--bg2));min-height:100vh;display:flex;align-items:center;justify-content:center;padding:32px}
+
+    .card{width:100%;max-width:920px;background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.00));border-radius:18px;padding:32px;box-shadow:0 10px 30px rgba(2,6,23,0.6);position:relative;overflow:hidden}
+
+    .header{display:flex;align-items:center;gap:20px}
+    .badge{width:96px;height:96px;border-radius:18px;background:linear-gradient(135deg,#0ea5a9,#7c3aed);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:28px;color:white;box-shadow:0 6px 20px rgba(124,58,237,0.18)}
+
+    h1{margin:0;font-size:36px;line-height:1.05}
+    .sub{opacity:0.9;margin-top:6px}
+
+    .content{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:26px}
+    .panel{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.008));border-radius:12px;padding:20px;min-height:240px}
+
+    .poem{font-style:italic;white-space:pre-wrap}
+    .meta{margin-top:18px;font-size:14px;opacity:0.9}
+
+    .btn{display:inline-block;padding:10px 16px;border-radius:10px;background:linear-gradient(90deg,var(--accent),#7dd3fc);color:#012; font-weight:700;text-decoration:none;box-shadow:0 8px 20px rgba(0,255,213,0.08);border:none;cursor:pointer}
+
+    .footer{margin-top:18px;display:flex;justify-content:space-between;align-items:center;gap:12px}
+    .from{font-weight:600}
+
+    /* floating lights */
+    .glow{position:absolute;right:-120px;top:-120px;width:320px;height:320px;background:radial-gradient(circle,#3ee7c0,transparent 30%);filter:blur(36px);opacity:0.12}
+    .glow2{position:absolute;left:-100px;bottom:-110px;width:260px;height:260px;background:radial-gradient(circle,#7c3aed,transparent 30%);filter:blur(36px);opacity:0.10}
+
+    /* responsive */
+    @media (max-width:720px){.content{grid-template-columns:1fr}.badge{width:80px;height:80px;font-size:22px}.header{gap:12px}.card{padding:20px}}
+
+    /* confetti animation (small) */
+    .confetti{pointer-events:none;position:absolute;inset:0;overflow:hidden}
+    .confetti i{position:absolute;width:10px;height:16px;border-radius:2px;opacity:0;transform:translateY(-10px) rotate(10deg);animation:fall 2s linear forwards}
+    @keyframes fall{0%{opacity:1;transform:translateY(-20vh) rotate(0deg)}100%{opacity:1;transform:translateY(120vh) rotate(720deg)}}
+  </style>
+</head>
+<body>
+  <div class="card" role="main" aria-labelledby="title">
+    <div class="glow"></div>
+    <div class="glow2"></div>
+
+    <div class="header">
+      <div class="badge">N</div>
+      <div>
+        <h1 id="title">Happy Birthday, <span style="color:var(--accent)">Nihla</span> 🎉</h1>
+        <div class="sub">To an unique girl — my constant, my partner-in-code, my best buddy.</div>
+      </div>
+    </div>
+
+    <div class="content">
+      <div class="panel">
+        <h2 style="margin-top:0">To My Healer 💖</h2>
+        <p style="margin:12px 0 0;line-height:1.5">Hey <strong>Nihla</strong>,
+        <br>Today the world got brighter because you exist. Thank you for standing by me in late-night bug hunts and brighter days alike. I wish you a year of joy that scales without limits, laughter with zero latency, and love that never times out.
+        </p>
+
+        <div class="meta">May your life's code always compile and your heart run with 100% uptime.</div>
+
+        <div class="footer">
+          <div class="from">From: <span style="font-weight:800">Your best buddy</span></div>
+          <button id="showPoem" class="btn">Show Poem</button>
+        </div>
+      </div>
+
+      <div class="panel" id="poemPanel" aria-hidden="true">
+        <h3 style="margin-top:0">A Poem for You..</h3>
+        <div class="poem" id="poemText">
+"Nihla — a name that hums like a gentle light,
+A steady presence through the darkest night.
+You stand beside me when the storms arrive,
+A quiet courage that helps me survive.
+
+Unique in laughter, deeper than the sea,
+A friend, a mirror, the truest part of me.
+When code breaks down or roadways blur,
+You hold the map — calm, sure, and pure.
+
+Best ever girl the world could send,
+A hand, a shoulder, a forever friend.
+Grateful I am that you chose to stay,
+Guiding my heart in the kindest way.
+
+So here’s my wish, both simple and true:
+May every dream find its way to you.
+May joy compile, and worries fall through —
+Happy Birthday, Nihla, I believe in you."
+        </div>
+        <div style="margin-top:14px;font-size:14px;opacity:0.95">(Click <strong>Play</strong> to celebrate)</div>
+        <div style="margin-top:12px;display:flex;gap:10px">
+          <button id="playBtn" class="btn">Play 🎈</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="confetti" id="confettiArea" aria-hidden="true"></div>
+  </div>
+
+  <script>
+    const poemPanel = document.getElementById('poemPanel');
+    const showPoem = document.getElementById('showPoem');
+    const playBtn = document.getElementById('playBtn');
+    const confettiArea = document.getElementById('confettiArea');
+    const downloadBtn = document.getElementById('downloadBtn');
+
+    showPoem.addEventListener('click', ()=>{
+      const hidden = poemPanel.getAttribute('aria-hidden') === 'true';
+      poemPanel.setAttribute('aria-hidden', String(!hidden));
+      poemPanel.scrollIntoView({behavior:'smooth',block:'center'});
+    });
+
+    playBtn.addEventListener('click', ()=>{
+      // small confetti burst
+      confettiArea.innerHTML = '';
+      for(let i=0;i<28;i++){
+        const el = document.createElement('i');
+        el.style.left = Math.random()*100 + '%';
+        el.style.background = ['#ff6b6b','#ffd166','#06d6a0','#4cc9f0'][Math.floor(Math.random()*4)];
+        el.style.transform = `translateY(${ -10 - Math.random()*30 }vh) rotate(${Math.random()*360}deg)`;
+        el.style.animationDelay = (Math.random()*0.8) + 's';
+        el.style.opacity = 1;
+        confettiArea.appendChild(el);
+      }
+      // optional tiny sound (uses Web Audio API) — user device may block autoplay
+      try{
+        const ctx = new (window.AudioContext||window.webkitAudioContext)();
+        const o = ctx.createOscillator();
+        const g = ctx.createGain();
+        o.type='sine'; o.frequency.value = 880;
+        o.connect(g); g.connect(ctx.destination);
+        g.gain.value = 0.02;
+        o.start(); o.frequency.exponentialRampToValueAtTime(440, ctx.currentTime + 0.25);
+        setTimeout(()=>{o.stop();ctx.close();},300);
+      }catch(e){/* ignore */}
+    });
+
+    // Download current HTML as a file
+    downloadBtn.addEventListener('click', ()=>{
+      const blob = new Blob([document.documentElement.outerHTML], {type:'text/html'});
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url; a.download = 'happy-birthday-nihla.html';
+      document.body.appendChild(a); a.click(); a.remove(); URL.revokeObjectURL(url);
+    });
+
+    // auto-show poem on load gently
+    window.addEventListener('load', ()=>{
+      setTimeout(()=>{poemPanel.setAttribute('aria-hidden','false');},600);
+    });
+  </script>
+</body>
+</html>
